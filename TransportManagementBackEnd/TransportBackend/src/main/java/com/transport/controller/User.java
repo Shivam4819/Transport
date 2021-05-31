@@ -7,24 +7,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class User {
 
     @Autowired
     UserService userService;
 
-    @PostMapping("/adduser")
-    public String User(@RequestBody UserEntity userEntity){
-        return  this.userService.insertdata(userEntity);
+    @PostMapping("/register")
+    public String registerManager(@RequestBody UserEntity userEntity){
+        return  this.userService.insertData(userEntity);
 
     }
-    @GetMapping("/alldata")
-    public List<UserEntity> dis(){
+    @GetMapping("/getuser")
+    public List<UserEntity> displayAllUser(){
        // return "yo";
-        System.out.println("controller");
+      //  System.out.println("controller");
         return this.userService.display();
     }
+
 }
