@@ -15,24 +15,33 @@ public class LoginService {
     @Autowired
     UserDao userDao;
 
+    UserEntity userEntity;
 
     public String checkLogin(LoginEntity loginEntity){
-       String email=loginEntity.getUsername();
+       //String email=loginEntity.getUsername();
+       int id=loginEntity.getId();
+     //  Optional<UserEntity> ids=userDao.findById(id);
        // Str
         //String
 
-        Iterable<UserEntity> itr=userDao.findAll();
-        Iterator<UserEntity> iterator= itr.iterator();
-
-
-        while (iterator.hasNext()){
-            UserEntity userEntity=iterator.next();
-            if(userEntity.getUsername().equals(email)){
-                    System.out.println("login done");
-                 //   return "login successful";
-                 break;
-            }
+        userEntity=userDao.getById(id);
+        if(userEntity.getPassword().equals(loginEntity.getPassword())){
+            System.out.println("login done");
+            return "login successful";
         }
+
+//        Iterable<UserEntity> itr=userDao.findAll();
+//        Iterator<UserEntity> iterator= itr.iterator();
+//
+//
+//        while (iterator.hasNext()){
+//            UserEntity userEntity=iterator.next();
+//            if(userEntity.getUsername().equals(email)){
+//                    System.out.println("login done");
+//                 //   return "login successful";
+//                 break;
+//            }
+//        }
 
         return "try again";
     }
