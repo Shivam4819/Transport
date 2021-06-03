@@ -18,14 +18,12 @@ public class LoginService {
     UserEntity userEntity;
 
     public String checkLogin(LoginEntity loginEntity){
-       //String email=loginEntity.getUsername();
-       int id=loginEntity.getId();
-     //  Optional<UserEntity> ids=userDao.findById(id);
-       // Str
-        //String
-
-        userEntity=userDao.getById(id);
-        if(userEntity.getPassword().equals(loginEntity.getPassword())){
+      // int id=loginEntity.getId();
+        String username=loginEntity.getUsername();
+        userEntity=userDao.getByUsername(username);
+       // userEntity=userDao.getById(id);
+        if(userEntity.getPassword().equals(loginEntity.getPassword())
+            && userEntity.getUsername().equals(username)){
             System.out.println("login done");
             return "login successful";
         }

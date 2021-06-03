@@ -8,24 +8,27 @@ import javax.persistence.UniqueConstraint;
 public class LoginEntity {
 
     @Id
-    private int id;
+    private String username;
     private String password;
 
-    public LoginEntity(int id, String password) {
-        this.id = id;
+    public LoginEntity( String username, String password) {
+        this.username = username;
         this.password = password;
     }
+
+
 
     public LoginEntity() {
     }
 
-    public int getId() {
-        return id;
+    public String getUsername() {
+        return username;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUsername(String username) {
+        this.username = username;
     }
+
 
     public String getPassword() {
         return password;
@@ -38,7 +41,7 @@ public class LoginEntity {
     @Override
     public String toString() {
         return "LoginEntity{" +
-                "id=" + id +
+                "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
