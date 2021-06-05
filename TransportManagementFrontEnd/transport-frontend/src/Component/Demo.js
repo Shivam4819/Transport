@@ -4,9 +4,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {ButtonToggle, Container, Form, FormGroup} from 'reactstrap';
 
-export default function LoginComponent(){
+export default function Demo(){
+
     const [username,setUser]=useState("");
     const [password,setPass]=useState("");
+    const [res,setRes]=useState("");
     function display(){
 
         console.log(username);
@@ -18,12 +20,18 @@ export default function LoginComponent(){
             password: password
 
         }).then((response)=>{
-                console.log(response.data)
+            setRes(response.data)
+            console.log(response,2);
+            console.log("----------",res)
             if(response.data==="success"){
+                console.log("3")
                 toast.success("login done");
+                toast.clearWaitingQueue();
             }
             else {
+                console.log("1")
                 toast.error("check credential");
+                toast.clearWaitingQueue();
             }
         })
     }
@@ -39,13 +47,13 @@ export default function LoginComponent(){
                 <FormGroup>
                     Password:<input type="text" name="password" placeholder="password" onChange={(event => setPass(event.target.value))}/><br/>
                 </FormGroup>
-                    <FormGroup>
-                    <ButtonToggle color="primary" size="md" onClick={display}>Display </ButtonToggle>{'   '}
+                <FormGroup>
+                    <ButtonToggle color="primary" size="md" onClick={display}>Display </ButtonToggle>{' '}
                     <ButtonToggle color="primary" size="md" onClick={sendtoSpring}>Login </ButtonToggle>{' '}
-                    {/*<ButtonToggle color="primary" size="md" onClick={notify}>Toast </ButtonToggle>{' '}*/}
+                    <ButtonToggle color="primary" size="md" onClick={notify}>Toast </ButtonToggle>{' '}
                     <ToastContainer
                         position="bottom-right"/>
-                    </FormGroup>
+                </FormGroup>
 
             </Form>
         </Container>
