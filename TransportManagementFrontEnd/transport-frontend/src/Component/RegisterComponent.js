@@ -2,7 +2,8 @@ import React,{useState}from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {ButtonToggle, Container, Form, FormGroup} from 'reactstrap';
+import {Button, ButtonToggle, Container, Form, FormGroup} from 'reactstrap';
+import {Link} from "react-router-dom";
 
 
 export default function RegisterComponent( ) {
@@ -43,26 +44,30 @@ export default function RegisterComponent( ) {
     return(
         <Container className="forms">
             <Form>
+                <h1> Type Details of new employees</h1><br/>
+
                 <FormGroup>
-                    ID:<input type="number" name="id"  onChange={(event => setId(event.target.value))}/><br/>
+                    <label>ID:</label><input type="number" name="id"  onChange={(event => setId(event.target.value))}/><br/>
                 </FormGroup>
                 <FormGroup>
-                     Name:<input type="text" name= "name" onChange={(event => setName(event.target.value))}/><br/>
+                    <label>Name:</label><input type="text" name= "name" onChange={(event => setName(event.target.value))}/><br/>
                 </FormGroup>
                 <FormGroup>
-                    Username:<input type="text" name="username" onChange={(event => setUsername(event.target.value))}/><br/>
+                    <label>Username:</label><input type="text" name="username" onChange={(event => setUsername(event.target.value))}/><br/>
                 </FormGroup>
                 <FormGroup>
-                     Password:<input type="text" name="password" onChange={(event => setPassword(event.target.value))}/><br/>
+                    <label>Password:</label><input type="text" name="password" onChange={(event => setPassword(event.target.value))}/><br/>
                 </FormGroup>
                 <FormGroup>
-                     Designation:<input type="text" name="designation" onChange={(event => setDesignation(event.target.value))}/><br/>
+                    <label>Designation:</label><input type="text" name="designation" onChange={(event => setDesignation(event.target.value))}/><br/>
                 </FormGroup>
                 <FormGroup>
-                    <ButtonToggle color="primary" size="md" onClick={displayall}>Display </ButtonToggle>{'   '}
-                    <ButtonToggle color="primary" size="md" onClick={sendUserValueToServer}>Register </ButtonToggle>{' '}
+
+                    {/*<ButtonToggle color="primary" size="md" onClick={displayall}>Display </ButtonToggle>{'   '}*/}
+                    <ButtonToggle color="primary" size="lg"  onClick={sendUserValueToServer}>Register </ButtonToggle>{' '}
                     <ToastContainer
                         position="bottom-right"/>
+                    <ButtonToggle outline color="link"><Link to ="/admintask" >Task Manager</Link></ButtonToggle>
                 </FormGroup>
             </Form>
         </Container>

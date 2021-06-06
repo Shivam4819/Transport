@@ -5,7 +5,9 @@ import RegisterComponent from "./RegisterComponent";
 import HeaderComponent from "./HeaderComponent";
 import FooterComponent from "./FooterComponent";
 import Welcome from "./Welcome";
-import Demo from "./Demo";
+import AdminLoginComponent from "./AdminLoginComponent";
+import AdminTaskComponent from "./AdminTaskComponent";
+import VehicleRegistration from "./VehicleRegistration";
 function ControllerComponent(){
 return(
     <div >
@@ -13,8 +15,11 @@ return(
            <HeaderComponent/>
             <Switch>
                 <Route exact path="/" component={Welcome}/>
+                <Route exact path="/adminlogin" component={AdminLoginComponent}/>
                 <Route exact path="/login" component={LoginComponent}/>
+                <Route exact path="/admintask" component={AdminTaskComponent}/>
                 <Route exact path="/register" component={RegisterComponent}/>
+                <Route exact path="/vehicledetail" component={VehicleRegistration}/>
             </Switch>
             <FooterComponent/>
         </HashRouter>

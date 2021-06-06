@@ -7,8 +7,8 @@ export default function HeaderComponent(){
             <nav className="navbar navbar-expand-md navbar-dark bg-dark">
                 <div></div>
                 <ul className="navbar-nav">
-                    <li ><Link className="nav-link" to="/login"> Login </Link></li>
-                    <li ><Link className="nav-link" to="/register"> Register </Link></li>
+                    <li ><Link className="nav-link" to="/"> Home </Link></li>
+                    <li ><Link className="nav-link" to="/register"> About Us </Link></li>
                 </ul>
 
 
