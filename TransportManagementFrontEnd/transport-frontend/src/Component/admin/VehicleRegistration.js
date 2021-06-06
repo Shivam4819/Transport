@@ -11,6 +11,7 @@ export default function VehicleRegistration( ) {
     const [capacity,setCapacity]=useState("");
     const [type,setType]=useState("");
     const [status,setStatus]=useState("");
+    const [empid,setempid]=useState("");
 
 
     function displayall(){
@@ -18,6 +19,7 @@ export default function VehicleRegistration( ) {
         console.log(capacity);
         console.log(type);
         console.log(status);
+        console.log(empid);
 
     }
 
@@ -26,7 +28,8 @@ export default function VehicleRegistration( ) {
             vnumber:vnumber,
             capacity:capacity,
             type:type,
-            status:status
+            status:status,
+            empid:empid
         }).then((response)=>{
 
             if(response.data==="success"){
@@ -57,7 +60,11 @@ export default function VehicleRegistration( ) {
                     <label>Status:</label><input type="text" name="status" onChange={(event => setStatus(event.target.value))}/><br/>
                 </FormGroup>
                 <FormGroup>
+                    <label>EmpID:</label><input type="number" name="empid" onChange={(event => setempid(event.target.value))}/><br/>
+                </FormGroup>
 
+                <FormGroup>
+                    {/*<ButtonToggle color="primary" size="lg"  onClick={displayall}>display</ButtonToggle>{' '}*/}
                     <ButtonToggle color="primary" size="lg"  onClick={sendVehicleDetails}>Register Vehicle</ButtonToggle>{' '}
                     <ToastContainer
                         position="bottom-right"/>

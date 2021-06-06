@@ -33,7 +33,6 @@ export default function RegisterComponent( ) {
 
             if(response.data==="success"){
                 toast.success("registration successful");
-                toast.info("go to login")
             }
             else {
                 toast.error("wrong input");
