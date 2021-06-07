@@ -4,11 +4,11 @@ import './App.css';
 import LoginComponent from "./Component/user/LoginComponent";
 import RegisterComponent from "./Component/admin/RegisterComponent";
 import ControllerComponent from "./Component/ControllerComponent";
-import UserTable from "./Component/admin/UserTable";
+import UserRecordTableComponent from "./Component/admin/UserRecordTableComponent";
 function App() {
   return (
     <div>
-        {/*<UserTable/>*/}
+        {/*<UserRecordTableComponent/>*/}
         <ControllerComponent/>
       {/*<h1>ssfsdjffs</h1>*/}
       {/*  <LoginComponent/>*/}

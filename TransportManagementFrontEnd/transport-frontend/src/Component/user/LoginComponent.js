@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {ButtonToggle, Container, Form, FormGroup} from 'reactstrap';
 
-export default function LoginComponent(){
+export default function LoginComponent(props){
     const [username,setUser]=useState("");
     const [password,setPass]=useState("");
     function display(){
@@ -20,7 +20,8 @@ export default function LoginComponent(){
         }).then((response)=>{
                 console.log(response.data)
             if(response.data==="success"){
-                toast.success("login done");
+                props.history.push("/usertask")
+
             }
             else {
                 toast.error("check credential");

@@ -3,7 +3,7 @@ import VehicleTableService from "../../api/VehicleTableService";
 import {Button, ButtonToggle, Container, Form, FormGroup} from 'reactstrap';
 import {Link} from "react-router-dom";
 
-export default function VehicleTable(){
+export default function VehicleTableComponent(){
 
 
 

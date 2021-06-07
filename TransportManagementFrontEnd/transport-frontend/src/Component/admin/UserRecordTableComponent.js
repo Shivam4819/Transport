@@ -3,7 +3,7 @@ import UserTableService from "../../api/UserTableService";
 import {Button, ButtonToggle, Container, Form, FormGroup} from 'reactstrap';
 import {Link} from "react-router-dom";
 
-export default function UserTable(){
+export default function UserRecordTableComponent(){
 
 
 
