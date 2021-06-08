@@ -1,5 +1,5 @@
 import  React ,{useEffect,useState}from "react";
-import VehicleRecordService from "../../api/VehicleRecordService";
+import VehicleRequestService from "../../api/VehicleRequestService";
 import {Button, ButtonToggle, Container, Form, FormGroup} from 'reactstrap';
 import {Link} from "react-router-dom";
 import axios from "axios";
@@ -12,6 +12,15 @@ export default function VehicleRecordComponent(){
     const [arr,setArr]= useState([])
 
 
+    function sendVehicleRequest(vnumber,id,capacity,type){
+        // console.log(empid,":", capacity,":", type)
+        axios.post("http://localhost:8080/reqveh",{
+            vnumber:vnumber,
+            empid:id,
+            capacity:capacity,
+            type:type
+        })
+    }
     function findbyStatus(){
         axios.post("http://localhost:8080/specific",{
             status:status
@@ -60,8 +69,9 @@ export default function VehicleRecordComponent(){
                                     <td>{value.capacity}</td>
                                     <td>{value.type}</td>
                                     <td>{value.status}</td>
+                                    <td><input type="number" name="empid" onChange={(event => setId(event.target.value))}/></td>
                                     {/*<td>{value.empid}</td>*/}
-                                    {/*<td><button className="btn btn-warning" >Delete</button></td>*/}
+                                    <td><button className="btn btn-warning" onClick={()=>sendVehicleRequest(value.vnumber,id,value.capacity,value.type)} >Request</button></td>
                                 </tr>
                             )
                         })

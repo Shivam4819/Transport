@@ -11,7 +11,7 @@ export default function AdminTaskComponent(){
             <Button outline color="secondary"><Link to ="/usertable" >View Users Record</Link></Button>{' '}
             <Button outline color="secondary"><Link to ="/vehicledetail" >Register Vehicle</Link></Button>{' '}
             <Button outline color="secondary"><Link to ="/vehicletable" >View All Vehicle</Link></Button>{' '}
-            <Button outline color="secondary"><Link to =" " >New Vehicle Request</Link></Button>{' '}
+            <Button outline color="secondary"><Link to ="/vehiclereq" >New Vehicle Request</Link></Button>{' '}
 
         </div>
     )

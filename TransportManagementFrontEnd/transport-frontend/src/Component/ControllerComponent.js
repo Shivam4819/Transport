@@ -10,6 +10,7 @@ import AdminTaskComponent from "./admin/AdminTaskComponent";
 import VehicleRegistration from "./admin/VehicleRegistration";
 import UserRecordTableComponent from "./admin/UserRecordTableComponent";
 import VehicleTableComponent from "./admin/VehicleTableComponent";
+import VehicleRequestComponent from "./admin/VehicleRequestComponent";
 
 import UserTaskComponent from "./user/UserTaskComponent";
 import VehicleRecordComponent from "./user/VehicleRecordComponent";
@@ -27,6 +28,7 @@ return(
                 <Route exact path="/vehicledetail" component={VehicleRegistration}/>
                 <Route exact path="/usertable" component={UserRecordTableComponent}/>
                 <Route exact path="/vehicletable" component={VehicleTableComponent}/>
+                <Route exact path="/vehiclereq" component={VehicleRequestComponent}/>
 
                 <Route exact path="/usertask" component={UserTaskComponent}/>
                 <Route exact path="/vehiclestatus" component={VehicleRecordComponent}/>
