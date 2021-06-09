@@ -10,12 +10,25 @@ public class VehicleEntity {
         private int capacity;
         private String type;
         private String status;
+        private int empid;
 
-    public VehicleEntity(int vnumber, int capacity, String type, String status) {
+    public VehicleEntity(int vnumber, int capacity, String type, String status,int empid) {
         this.vnumber = vnumber;
         this.capacity = capacity;
         this.type = type;
         this.status = status;
+        this.empid=empid;
+    }
+
+    public VehicleEntity() {
+    }
+
+    public int getEmpid() {
+        return empid;
+    }
+
+    public void setEmpid(int empid) {
+        this.empid = empid;
     }
 
     public String getType() {
@@ -26,8 +39,7 @@ public class VehicleEntity {
         this.type = type;
     }
 
-    public VehicleEntity() {
-    }
+
 
     public int getVnumber() {
         return vnumber;
@@ -60,6 +72,7 @@ public class VehicleEntity {
                 ", capacity=" + capacity +
                 ", type='" + type + '\'' +
                 ", status='" + status + '\'' +
+                ", empid=" + empid +
                 '}';
     }
 }

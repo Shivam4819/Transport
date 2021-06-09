@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface VehicleDao extends JpaRepository<VehicleEntity,Integer> {
     List<VehicleEntity> findByStatus(String status);
+    List<VehicleEntity> findByEmpid(int empid);
+
 }
