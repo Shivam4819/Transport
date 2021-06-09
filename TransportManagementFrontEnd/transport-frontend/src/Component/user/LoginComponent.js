@@ -7,19 +7,22 @@ import {ButtonToggle, Container, Form, FormGroup} from 'reactstrap';
 export default function LoginComponent(props){
     const [username,setUser]=useState("");
     const [password,setPass]=useState("");
+    const [res,setRes]=useState("");
     function display(){
 
         console.log(username);
         console.log(password);
     }
     function sendtoSpring(){
-        axios.post("http://localhost:8080/loginuser",{
+        axios.post("http://localhost:8080/api/v1/loginuser",{
             username: username,
             password: password
 
         }).then((response)=>{
                 console.log(response.data)
-            if(response.data==="success"){
+            res:response.toString();
+            setRes(response.data)
+            if(res.toString()==="done"){
                 props.history.push("/usertask")
 
             }
