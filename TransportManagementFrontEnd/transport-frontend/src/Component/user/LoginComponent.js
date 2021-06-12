@@ -14,15 +14,15 @@ export default function LoginComponent(props){
         console.log(password);
     }
     function sendtoSpring(){
-        axios.post("http://localhost:8080/api/v1/loginuser",{
+        axios.post("http://localhost:8080/loginuser",{
             username: username,
             password: password
 
         }).then((response)=>{
-                console.log(response.data)
-            res:response.toString();
-            setRes(response.data)
-            if(res.toString()==="done"){
+                console.log(response)
+         //   result=response.data.msg;
+             setRes(response.data.msg)
+            if(response.data.msg==="done"){
                 props.history.push("/usertask")
 
             }

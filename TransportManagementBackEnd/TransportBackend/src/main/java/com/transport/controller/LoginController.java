@@ -22,14 +22,10 @@ public class LoginController {
 
     @PostMapping(LOGIN_USER)
     public CheckCredentialResponse checkCredential(@RequestBody CheckCredentialRequest checkCredentialRequest)
-            throws Exception { // TODO:
+            throws Exception {
 
         log.info(" Request in checkCredential: {}", checkCredentialRequest);
-        CheckCredentialResponse checkCredentialResponse=new CheckCredentialResponse();
-        checkCredentialResponse.setMsg(loginService.checkLogin(checkCredentialRequest).toString());
-        log.info(" Response in checkCredential: {}", checkCredentialResponse);
-//        throw new Exception("form login controllle");
-        return checkCredentialResponse;
-
+        log.info("Response in checkCredential: {}",loginService.checkLogin(checkCredentialRequest));
+        return loginService.checkLogin(checkCredentialRequest);
     }
 }

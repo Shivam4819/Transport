@@ -30,8 +30,8 @@ export default function RegisterComponent( ) {
             password: password,
             designation : designation
         }).then((response)=>{
-
-            if(response.data==="success"){
+            console.log(response.data)
+            if(response.data.responseMsg==="done"){
                 toast.success("registration successful");
             }
             else {

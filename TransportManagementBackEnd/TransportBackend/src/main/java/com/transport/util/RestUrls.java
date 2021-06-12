@@ -7,4 +7,7 @@ public class RestUrls {
 
     public static final String USER_CONTROLLER = "/api/v1";
     public static final String REGISTER_MANAGER="/register";
+    public static final String DISPLAY_USER="/getuser";
+
+    public static final String REGISTER_VEHICLE="/vehicles";
 }

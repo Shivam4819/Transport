@@ -1,19 +1,16 @@
 package com.transport.services;
 
-import com.transport.dao.UserDao;
 import com.transport.dao.VehicleDao;
 import com.transport.dao.VehicleRquestDao;
 import com.transport.entity.NewVehicleRequestEntity;
-import com.transport.entity.UserEntity;
 import com.transport.entity.VehicleEntity;
-import org.hibernate.Criteria;
+import com.transport.request.RegisterVehicleRequest;
+import com.transport.response.RegisterVehicleResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -28,9 +25,18 @@ public class VehicleService {
     VehicleEntity vehicleEntity;
     NewVehicleRequestEntity vehicleRequest;
 
-    public String registerVehicleService(VehicleEntity vehicleEntity) {
+    public RegisterVehicleResponse registerVehicleService(RegisterVehicleRequest registerVehicleRequest) {
+        VehicleEntity vehicleEntity=new VehicleEntity();
+        vehicleEntity.setEmpid(registerVehicleRequest.getEmpid());
+        vehicleEntity.setCapacity(registerVehicleRequest.getCapacity());
+        vehicleEntity.setStatus(registerVehicleRequest.getStatus());
+        vehicleEntity.setType(registerVehicleRequest.getType());
+        vehicleEntity.setVnumber(registerVehicleRequest.getVnumber());
         vehicleDao.save(vehicleEntity);
-        return "success";
+
+        RegisterVehicleResponse registerVehicleResponse=new RegisterVehicleResponse();
+        registerVehicleResponse.setVehicleMsg("success");
+        return registerVehicleResponse;
     }
 
     public List<VehicleEntity> vehicleDetailsFromDB() {

@@ -7,4 +7,4 @@ import lombok.NonNull;
 public class CheckCredentialResponse {
 
     private String msg;
-}
+ }
